@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/home/dipesh/Second-Hand-Car-Price-Prediction/venv"
+VIRTUAL_ENV="/home/dipesh/price-prediction/venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

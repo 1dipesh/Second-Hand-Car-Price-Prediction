@@ -1,4 +1,4 @@
-#!/home/dipesh/Second-Hand-Car-Price-Prediction/venv/bin/python3
+#!/home/dipesh/price-prediction/venv/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys

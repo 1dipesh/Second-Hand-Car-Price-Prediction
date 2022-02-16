@@ -1,0 +1,227 @@
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
+
+<!DOCTYPE html>
+<html >
+
+<head>
+  <meta charset="UTF-8">
+  <title>BIA</title>
+
+</head>
+
+<body>
+
+<script>
+var swap_val = function (val){
+	var input = document.getElementById("milerate_min");
+	input.value=val;
+	
+	var max = document.getElementById("milerate_max");
+	max.value=val;
+	
+}
+
+
+const formatter = new Intl.NumberFormat('th-TH', {
+  style: 'currency',
+  currency: 'THB',
+  minimumFractionDigits: 0
+})
+</script>
+<div class='container'>
+<a id="dashboard" class="link" href=/overview>Overview </a>| 
+<a id="dashboard" class="link" href=/dashboard-1>No.of Registered Car </a>| 
+<a id="dashboard" class="link" href=/dashboard-2>Market Share </a>|
+<a id="dashboard" class="link" href=/dashboard-3>Market Segmentation </a>|
+<a id="dashboard" class="link" href=/dashboard-4>Price Details </a>|
+<a id="dashboard" class="link" href=/dashboard-5>Price Depreciation </a>|
+<a id="prediction class="link" href=/><u>Prediction</u></a>
+<br><br>
+
+ <div class="login", style="width: 60%; margin: 0px auto;">
+	<h2>Second Hand Car Prediction</h2>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+	<table>
+	<tr>
+   <td> <label for="brand">Brand</label></td>
+    <td><select type="text" id="brand" name="brand" placeholder="brand">
+      <option ></option>
+      <option >BMW</option>
+      <option >FORD</option>
+      <option >HONDA</option>
+      <option >ISUZU</option>
+      <option >MERCEDES-BENZ</option>
+      <option >MG</option>
+      <option >MITSUBISHI</option>
+      <option >NISSAN</option>
+      <option >SUZUKI</option>
+      <option >TOYOTA</option>
+     </select>
+     <td><tr>
+    	
+    <tr>
+    <td>	
+    <label for="model">Model</label>	</td>
+    <td><select type="text" id="model" name="model">
+      <option ></option>
+      <option >116I</option>
+      <option >118I</option>
+      <option >318I</option>
+      <option >320D</option>
+      <option >ECOSPORT</option>
+      <option >EVEREST</option>
+      <option >FIESTA</option>
+      <option >RANGER</option>
+      <option >ACCORD</option>
+      <option >BR-V</option>
+      <option >CR-V</option>
+      <option >CIVIC</option>
+      <option >D-MAX</option>
+      <option >MU-X</option>
+      <option >2</option>
+      <option >3</option>
+      <option >A200</option>
+      <option >B200</option>
+      <option >C200</option>
+      <option >C250</option>
+      <option >C300</option>
+      <option >C350</option>
+      <option >E220</option>
+      <option >Z5</option>
+      <option >MG3</option>
+      <option >MG5</option>
+      <option >EXTENDER</option>
+      <option >ATTRAGE</option>
+      <option >MIRAGE</option>
+      <option >DELICA SPACE</option>
+      <option >ALMERA</option>
+      <option >NAVARA</option>
+      <option >X-TRAIL</option>
+      <option >CIAZ</option>
+      <option >CELERIO</option>
+      <option >SWIFT</option>
+      <option >CAMRY</option>
+      <option >INNOVA</option>
+      <option >YARIS</option>
+      <option >YARIS ATIV</option>
+      <option >HIACE</option>
+      <option >HILUX REVO</option>
+      <option >VENTURY</option>
+      <option >TEANA</option>
+     </select></td></tr>
+     
+      <tr><td><label for="gear_type">Gear Type</label></td>
+	<td><select type="number" id="gear_type" name="gear_type" placeholder="gear_type">
+	<option ></option>
+      <option >manual</option>
+      <option >automatic</option>
+     </select>
+	</td></tr>
+
+	
+      
+     <tr><td> <label for="Year">Year</label></td>
+      <td><select type="number" id="year" name="year">
+      <option ></option>
+      <option >2016</option>
+      <option >2017</option>
+      <option >2018</option>
+      <option >2019</option>
+      <option >2020</option>
+     </select>
+	</td></tr>
+	
+	 <tr><td><label for="engine_size">Engine Size</label></td>
+        <td><select type="number" id="e_size" name="e_size" placeholder="brand">
+        <option ></option>
+      <option >1</option>
+      <option >1.2</option>
+      <option >1.4</option>
+      <option >1.5</option>
+      <option >1.6</option>
+      <option >1.8</option>
+      <option >1.9</option>      
+      <option >2</option>
+      <option >2.1</option>
+      <option >2.2</option>
+      <option >2.4</option>
+      <option >2.5</option>
+      <option >2.7</option>
+      <option >3.2</option>
+      <option >3.8</option>
+      <option >3.9</option>
+      <option >4</option>
+      <option >4.4</option>
+      <option >5</option>
+      <option >5.2</option>
+      <option >6.3</option>
+      <option >6.6</option>
+      
+      
+     </select>
+        </td></tr>
+        
+	
+	
+	<tr><td><label for="milerate">Mileage </label></td>
+	<td><input type="number" name="milerate" placeholder="milerate" required="required" onkeyup="swap_val(this.value);" value="" />
+	</td></tr>
+	
+	
+	<td><input type="hidden" type="number" name="milerate_min" placeholder="milerate_min" id = "milerate_min" required="required" value="" onkeyup="swap_min(this.value)"/>
+	</td>
+	
+	
+	<td><input type="hidden" type="number" name="milerate_max" placeholder="milerate_max" id = "milerate_max" required="required" value="" />
+	</td>
+	
+	
+	
+	
+	
+	
+	<tr><td>
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+        </td>
+        <td></td></tr>
+        </table>
+    </form>
+
+   <br>
+   <br>
+   
+  <h3>The predicted price of {{year}} {{brand}} {{model_name}} with {{gear}} transmission and {{milerate}} km. is <script>document.write(formatter.format({{prediction}}))</script>.</h3>
+  
+ </div>
+
+</div>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
